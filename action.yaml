@@ -1,0 +1,17 @@
+name: terraform-fmt-check
+description: Check that Terraform configuration files are in canonical format
+author: Daniel Flook
+
+inputs:
+  path:
+    description: Path to the terraform configuration
+    required: true
+
+runs:
+  using: docker
+  image: docker.pkg.github.com/dflook/terraform-github-actions/action:v0.1.0
+  entrypoint: /entrypoints/fmt-check.sh
+
+branding:
+  icon: globe
+  color: purple
